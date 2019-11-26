@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product Card should render  1`] = `
+<div
+  className="sc-bdVaJa jkBsrb"
+>
+  <img
+    className="sc-bwzfXH hhIhSy"
+    src="https://static-images.ifood.com.br/image/upload/f_auto,t_high/pratos/65c38aa8-b094-413d-9a80-ddc256bfcc78/201907031404_66194495.jpg"
+  />
+  <div
+    className="sc-htpNat eYSXSN"
+  >
+    <span
+      className="sc-bxivhb qUNyQ"
+    >
+      Bibsfiha carne
+    </span>
+    <span
+      className="sc-ifAKCX gwVnnc"
+    >
+      Esfiha deliciosa, receita secreta do Habibs.
+    </span>
+    <span
+      className="sc-EHOje frzsaL"
+    >
+      R$ 0
+      1
+      ,00
+    </span>
+  </div>
+  <span
+    className="sc-gzVnrw kFsFDa"
+  >
+    2
+  </span>
+  <button
+    className="sc-bZQynM jMfwPM"
+  >
+    adicionar
+  </button>
+</div>
+`;
