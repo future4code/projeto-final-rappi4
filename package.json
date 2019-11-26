@@ -7,6 +7,7 @@
   "dependencies": {
     "@material-ui/core": "3.9.3",
     "@material-ui/icons": "^4.5.1",
+    "@types/jest": "^24.0.23",
     "axios": "0.19.0",
     "connected-react-router": "6.5.2",
     "history": "4.10.1",
@@ -22,8 +23,10 @@
     "styled-components": "4.4.1"
   },
   "devDependencies": {
+    "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "jest": "24.7.1",
+    "react-test-renderer": "^16.8.6",
     "typescript": "3.3.3"
   },
   "scripts": {
