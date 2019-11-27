@@ -44,8 +44,7 @@ export class SignUp extends Component {
         event.preventDefault();
         const { nome, email, password, password2, cpf } = this.state
         if (password === password2){
-            this.props.signUp(nome, email, password, cpf)
-            console.log("Pegou as info do onClickCreateUser")
+            this.props.signUp(nome, email, cpf, password)
         } else {
             window.alert("YOU SHALL NOT PASS! As senhas devem ser iguais, ok?")
         }
