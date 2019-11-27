@@ -2,7 +2,7 @@ import React from "react";
 import { ConnectedRouter } from "connected-react-router";
 import { Switch, Route } from "react-router-dom";
 import Login from "../Login/Login";
-import SignUp from "../SignUp/SignUp";
+import SignUp from "../SignUp/signup";
 import Address from "../Address/Address";
 import { Carrinho } from "../Carrinho/Carrinho";
 import ProductCard from "../../components/ProductCard";
