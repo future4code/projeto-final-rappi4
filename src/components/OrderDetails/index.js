@@ -2,7 +2,7 @@ import React from 'react'
 import { StyledCardContainer, StyledTitleSpan, StyledContentSpan, StyledPriceSpan, StyledCardContent } from './styled';
 
 
-export default function RestaurantCard(props) {
+export default function OrderDetails(props) {
     const mockCard = {
         "totalPrice": 20,
         "restaurantName": "Habibs",

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import RestaurantCard from '../../components/RestaurantCard'
+import RestaurantCard from '../../components/OrderDetails'
 import {
     AppWrapper, AppBar, TitleAppBar, TopoWrapper, ClientName, ClientEmail, ClientCPF, MiddleWrapper, EndEntrega, EndEntregaCliente, HistoricoPedidos, DividerStyled, NavBar
 } from './styled'
