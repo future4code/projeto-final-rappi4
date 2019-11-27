@@ -1,78 +1,25 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import styled from "styled-components";
 import { routes } from "../Router";
-import { Card } from "@material-ui/core";
-// import { login } from "../../actions/auth";
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import IconButton from '@material-ui/core/IconButton';
 import Logo from "./logo.png";
-
-
-const Wrapper = styled.div`
-  height:640px;
-  width:100vw;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-`
-const LoginStyled = styled(Card)`
-  width: 360px;
-  height: 640px;
-  display:flex;
-  flex-direction:column;
-  align-items: center;
-  justify-content: center;
-`
-const PageTitle = styled.p`
-    font-weight: bold;
-`
-const FormSyled = styled.form`
-    width: 360px;
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-    justify-content: center;
-`
-const StyledBtn = styled(Button)`
-    background-color: #e86e5a;
-    font-weight: bold;
-    color: black;
-    width: 328px;
-    height: 42px;
-    border-radius: 2px;
-    margin: 10px;
-    :hover{
-        background-color: #e86e5a;
-    }
-`
-const StyledBtnCadastro = styled(Button)`
-  font-weight: bold;
-  color: black;
-  margin: 10px;
-  :hover{
-      background: none;
-  }
-`
-const StyledTextField = styled(TextField)`
-    padding: 1px;
-    width: 328px;
-    height: 56px;
-    border-radius: 2px;
-    margin: 10px;
-`
+import { Wrapper } from "./SignupStyled";
+import { LoginStyled } from "./SignupStyled";
+import { PageTitle } from "./SignupStyled";
+import { FormStyled } from "./SignupStyled";
+import { StyledTextField } from "./SignupStyled";
+import { StyledBtn } from "../Button/Button";
 
 
 export class SignUp extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            nome: "",
             email: "",
             password: "",
             showPassword: false,
@@ -93,22 +40,21 @@ export class SignUp extends Component {
 
 
     render() {
-        const { email, password } = this.state;
+        const { email, password, nome, cpf } = this.state;
         return (
             <Wrapper>
-
                 <LoginStyled>
                     <img src={Logo} alt="" />
                     <PageTitle>SignUp</PageTitle>
-                    <FormSyled onSubmit={this.onClickLogin}>
+                    <FormStyled onSubmit={this.onClickLogin}>
                         <StyledTextField
                             onChange={this.handleFieldChange}
                             variant="outlined"
-                            name="email"
-                            type="email"
+                            name="nome"
+                            type="text"
                             label="Nome"
                             placeholder="Nome e sobrenome"
-                            value={email}
+                            value={nome}
                             required={true}
                             inputProps={{ pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" }}
                         />
@@ -126,11 +72,11 @@ export class SignUp extends Component {
                         <StyledTextField
                             onChange={this.handleFieldChange}
                             variant="outlined"
-                            name="email"
-                            type="email"
+                            name="cpf"
+                            type="text"
                             label="CPF"
                             placeholder="xxx.xxx.xxx.xx"
-                            value={email}
+                            value={cpf}
                             required={true}
                             inputProps={{ pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" }}
                         />
@@ -156,7 +102,6 @@ export class SignUp extends Component {
                                 ),
                             }}
                         />
-
                         <StyledTextField
                             onChange={this.handleFieldChange}
                             variant="outlined"
@@ -179,15 +124,13 @@ export class SignUp extends Component {
                                 ),
                             }}
                         />
-
                         <StyledBtn
                             variant="contained"
                             color="primary"
                             type='submit'
                         > Criar
                 	    </StyledBtn>
-
-                    </FormSyled>
+                    </FormStyled>
                 </LoginStyled>
 
             </Wrapper >

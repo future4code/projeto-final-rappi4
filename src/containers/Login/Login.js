@@ -1,73 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import styled from "styled-components";
 import { routes } from "../Router";
-import { Card } from "@material-ui/core";
-// import { login } from "../../actions/auth";
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import IconButton from '@material-ui/core/IconButton';
 import Logo from "./logo.png";
-
-
-const Wrapper = styled.div`
-  height:640px;
-  width:100vw;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-`
-const LoginStyled = styled(Card)`
-  width: 360px;
-  height: 640px;
-  display:flex;
-  flex-direction:column;
-  align-items: center;
-  justify-content: center;
-`
-const PageTitle = styled.p`
-    font-weight: bold;
-`
-const FormSyled = styled.form`
-    width: 360px;
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-    justify-content: center;
-`
-const StyledBtn = styled(Button)`
-    background-color: #e86e5a;
-    font-weight: bold;
-    color: black;
-    width: 328px;
-    height: 42px;
-    border-radius: 2px;
-    margin: 10px;
-    :hover{
-        background-color: #e86e5a;
-    }
-`
-const StyledBtnCadastro = styled(Button)`
-  font-weight: bold;
-  color: black;
-  margin: 10px;
-  :hover{
-      background: none;
-  }
-`
-const StyledTextField = styled(TextField)`
-    padding: 1px;
-    width: 328px;
-    height: 56px;
-    border-radius: 2px;
-    margin: 10px;
-`
-
+import { LoginStyled } from "./LoginStyled";
+import { Wrapper } from "./LoginStyled";
+import { PageTitle } from "./LoginStyled";
+import { FormStyled } from "./LoginStyled";
+import { StyledBtn } from "../Button/Button";
+import { StyledBtnCadastro } from "./LoginStyled";
+import { StyledTextField } from "./LoginStyled";
 
 export class Login extends Component {
     constructor(props) {
@@ -90,17 +36,14 @@ export class Login extends Component {
         this.setState(state => ({ showPassword: !state.showPassword }));
     };
 
-
-
     render() {
         const { email, password } = this.state;
         return (
             <Wrapper>
-
                 <LoginStyled>
-                <img src={Logo} alt="" />
+                    <img src={Logo} alt="" />
                     <PageTitle>Entrar</PageTitle>
-                    <FormSyled onSubmit={this.onClickLogin}>
+                    <FormStyled onSubmit={this.onClickLogin}>
                         <StyledTextField
                             onChange={this.handleFieldChange}
                             variant="outlined"
@@ -134,21 +77,19 @@ export class Login extends Component {
                                 ),
                             }}
                         />
-
                         <StyledBtn
                             variant="contained"
                             color="primary"
                             type='submit'
                         > Entrar
-            </StyledBtn>
+                        </StyledBtn>
 
                         <StyledBtnCadastro
                             onClick={this.props.goToCadastrar}
                             color="primary"
                         > Não possui cadastro? Clique aqui.
-            </StyledBtnCadastro>
-
-                    </FormSyled>
+                        </StyledBtnCadastro>
+                    </FormStyled>
                 </LoginStyled>
 
             </Wrapper >
