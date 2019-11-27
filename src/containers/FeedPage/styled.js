@@ -6,7 +6,9 @@ export const FeedPageContainer = styled.section`
     display: flex;
     flex-direction: column;
     padding: 0 16px;
-    >*{margin-top: 8px}
+    > * {
+        margin-top: 8px
+    }
 `
 
 export const StyledInput = styled(TextField)`

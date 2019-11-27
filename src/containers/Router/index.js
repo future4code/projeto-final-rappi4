@@ -16,8 +16,8 @@ function Router(props) {
     <ConnectedRouter history={props.history}>
       <Switch>
         <Route path={routes.cart} component={Carrinho} />
-        <Route path={routes.root} component={ProductCard} />
         <Route path={routes.feed} component={FeedPage} />
+        <Route path={routes.root} component={ProductCard} />
       </Switch>
     </ConnectedRouter>
   );
