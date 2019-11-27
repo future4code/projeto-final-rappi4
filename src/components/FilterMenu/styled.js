@@ -4,9 +4,6 @@ import Tab from '@material-ui/core/Tab'
 
 
 export const StyledTabs = styled(Tabs)`
-    & > span{
-        display: none;
-    }
 `
 
 export const StyledTab = styled(Tab)`

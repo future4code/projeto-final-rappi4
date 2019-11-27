@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product Card should render  1`] = `
+<section
+  className="sc-bdVaJa YuCSh"
+>
+  <div
+    className="sc-bwzfXH bcpEuf"
+  >
+    <img
+      className="sc-htpNat bRmsBL"
+      src="http://soter.ninja/futureFoods/logos/habibs.jpg"
+    />
+  </div>
+  <div
+    className="sc-ifAKCX djZecA"
+  >
+    <span
+      className="sc-bxivhb ibrqBp"
+    >
+      Habibs
+    </span>
+    <div
+      className="sc-EHOje kbWHUg"
+    >
+      <span>
+        60
+         min
+      </span>
+      <span>
+        Frete R$ 
+        6
+        ,00
+      </span>
+    </div>
+  </div>
+</section>
+`;
