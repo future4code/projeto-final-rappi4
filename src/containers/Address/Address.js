@@ -58,7 +58,6 @@ export class Address extends Component {
                             label="Complemento"
                             placeholder="Apto. / Bloco"
                             value={complemento}
-                            required={true}
                         />
                         <StyledTextField
                             onChange={this.handleFieldChange}
