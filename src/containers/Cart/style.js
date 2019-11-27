@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import Divider from '@material-ui/core/Divider';
 
 export const AppWrapper = styled.div`
-    width: 360px;
     display:flex;
     flex-direction:column;
     height: 600px;
@@ -11,14 +10,14 @@ export const AppWrapper = styled.div`
 
 export const AppBar = styled.div`
     height: 44px;
-    width:145px;
     margin-bottom:1px;
     display:flex;
     justify-content:center;
     align-items:center;
     align-self:center;
-    padding: 0 16px;
+    padding: 12px 0;
 `
+
 export const TitleAppBar = styled.div`
     font-size: 16px;
     font-weight: normal;
@@ -30,51 +29,16 @@ export const TitleAppBar = styled.div`
     color: var(--black);
 `
 
-export const EndWrapper = styled.div`
-    height: 76px;
-    background-color: #eeeeee;
-    margin-bottom:8px;
-    padding: 0 16px;
-`
-export const ItensCarrinhoWrapper = styled.div`
-    height: 42px;
+export const CartItensWrapper = styled.div`
     display:flex;
     align-items:center;
     align-self:center;
-    padding: 0 16px;
+    flex-direction:column;
+    /* padding:0 16px; */
 `
 
 export const NavBar = styled.div`
     height: 49px;
-`
-
-export const EndEntrega = styled.div`
-    width: 328px;
-    height: 18px;
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: -0.39px;
-    color: #b8b8b8;
-    margin-top:16px;
-    margin-bottom:8px;
-`
-
-export const EndEntregaCliente = styled.div`
-    width: 328px;
-    height: 18px;
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: -0.39px;
-    color: var(--black);
-    margin-bottom:8px;
 `
 
 export const Frete = styled.div`
@@ -92,6 +56,7 @@ export const Frete = styled.div`
     align-self:flex-end;
     padding-right:16px;
     margin-bottom:14px;
+    margin-top:8px;
 `
 
 export const TotalWrapper = styled.div`
@@ -108,7 +73,7 @@ export const SubTotalWrapper = styled.div`
     margin-bottom:25px;
 `
 
-export const FormaPagamento = styled.div`
+export const Payment = styled.div`
     width: 360px;
     height: 18px;
     font-family: Roboto;
@@ -136,7 +101,7 @@ export const SubTotal = styled.div`
     color: var(--black);
 `
 
-export const SubTotalValor = styled.div`
+export const SubTotalValue = styled.div`
     width: 164px;
     height: 21px;
     font-family: Roboto;
@@ -151,9 +116,63 @@ export const SubTotalValor = styled.div`
 `
 
 export const DividerStyled = styled(Divider)`
+    margin: 0 16px 8px 16px;
+    background-color:black; 
+`
+
+export const ButtonStyled = styled.button`
+    height: 42px;
+    border-radius: 2px;
+    background-color: #e86e5a;
+    align-self:center;
+    margin:0;
+    border:0;
+    width:100vw;
+`
+export const StyledRestContent = styled.div`
+    padding: 16px;
+    width:100vw;
+`
+export const ProductsWrapper = styled.div`
+    padding: 0 16px;
+    display:flex;
+    flex-direction:column;
+`
+
+export const StyledTitle = styled.div`
+    display: block;
+    color: #e86e5a;
+    font-size: 16px;
+    margin-bottom: 8px; 
+`
+export const StyledAdress = styled.div`
+    display: block;
+    font-size: 16px;
+    color: #b8b8b8;
+    margin-bottom: 8px;
+`
+export const StyledTime = styled.div`
+    display: block;
+    font-size: 16px;
+    color: #b8b8b8;
+`
+
+export const DeliveryAdress = styled.div`
+    width: 328px;
+    height: 18px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.39px;
+    color: #b8b8b8;
     margin-bottom:8px;
 `
-export const TipoPagamento = styled.div`
+
+export const DeliveryAdressClient = styled.div`
+    width: 328px;
     height: 18px;
     font-family: Roboto;
     font-size: 16px;
@@ -164,15 +183,8 @@ export const TipoPagamento = styled.div`
     letter-spacing: -0.39px;
     color: var(--black);
 `
-export const FormStyled = styled.form`
-    margin-bottom:14px;
-    padding: 0 16px;
 
-`
-export const ButtonStyled = styled.button`
-    width: 328px;
-    height: 42px;
-    border-radius: 2px;
-    background-color: #e86e5a;
-    align-self:center;
+export const AdressWrapper = styled.div`
+    background-color: #eeeeee;
+    padding:16px;
 `
