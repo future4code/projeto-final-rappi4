@@ -1,8 +1,4 @@
 import React, { Component } from "react";
-import InputAdornment from '@material-ui/core/InputAdornment';
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
-import IconButton from '@material-ui/core/IconButton';
 import { StyledBtn } from "../Button/Button";
 import { Wrapper} from "./AddressStyled";
 import { LoginStyled } from "./AddressStyled";
