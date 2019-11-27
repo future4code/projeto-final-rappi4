@@ -13,6 +13,7 @@ import { PageTitle } from "./SignupStyled";
 import { FormStyled } from "./SignupStyled";
 import { StyledTextField } from "./SignupStyled";
 import { StyledBtn } from "../Button/Button";
+import { signUp } from "../../actions/auth";
 
 
 export class SignUp extends Component {
@@ -21,7 +22,9 @@ export class SignUp extends Component {
         this.state = {
             nome: "",
             email: "",
+            cpf: "",
             password: "",
+            password2: "",
             showPassword: false,
         };
     }
@@ -37,16 +40,28 @@ export class SignUp extends Component {
         this.setState(state => ({ showPassword: !state.showPassword }));
     };
 
+    onClickCreateUser = (event) => {
+        event.preventDefault();
+        const { nome, email, password, password2, cpf } = this.state
+        if (password === password2){
+            this.props.signUp(nome, email, password, cpf)
+            console.log("Pegou as info do onClickCreateUser")
+        } else {
+            window.alert("YOU SHALL NOT PASS! As senhas devem ser iguais, ok?")
+        }
+        
+    }
+
 
 
     render() {
-        const { email, password, nome, cpf } = this.state;
+        const { email, password, password2, nome, cpf } = this.state;
         return (
             <Wrapper>
                 <LoginStyled>
                     <img src={Logo} alt="" />
                     <PageTitle>SignUp</PageTitle>
-                    <FormStyled onSubmit={this.onClickLogin}>
+                    <FormStyled onSubmit={this.onClickCreateUser}>
                         <StyledTextField
                             onChange={this.handleFieldChange}
                             variant="outlined"
@@ -56,7 +71,6 @@ export class SignUp extends Component {
                             placeholder="Nome e sobrenome"
                             value={nome}
                             required={true}
-                            inputProps={{ pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" }}
                         />
                         <StyledTextField
                             onChange={this.handleFieldChange}
@@ -73,7 +87,7 @@ export class SignUp extends Component {
                             onChange={this.handleFieldChange}
                             variant="outlined"
                             name="cpf"
-                            type="text"
+                            type="number"
                             label="CPF"
                             placeholder="xxx.xxx.xxx.xx"
                             value={cpf}
@@ -105,11 +119,11 @@ export class SignUp extends Component {
                         <StyledTextField
                             onChange={this.handleFieldChange}
                             variant="outlined"
-                            name="password"
+                            name="password2"
                             type={this.state.showPassword ? 'text' : 'password'}
                             label="Confirme a senha anterior"
                             placeholder="Mínimo 6 caracteres"
-                            value={password}
+                            value={password2}
                             required={true}
                             InputProps={{
                                 endAdornment: (
@@ -140,11 +154,8 @@ export class SignUp extends Component {
 }
 
 
+const mapDispatchToProps = dispatch => ({
+  signUp: (nome, email, cpf, password) => dispatch(signUp(nome, email, cpf, password)),
+});
 
-// const mapDispatchToProps = dispatch => ({
-//   goToCadastrar: () => dispatch(push(routes.cadastrar)),
-// });
-
-// export default connect(null, mapDispatchToProps)(Login);
-
-export default SignUp;
+export default connect(null, mapDispatchToProps)(SignUp);
