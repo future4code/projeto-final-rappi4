@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import TextField from '@material-ui/core/TextField'
 
 export const FeedPageContainer = styled.section`
     width: 100vw;
@@ -8,11 +7,5 @@ export const FeedPageContainer = styled.section`
     padding: 0 16px;
     > * {
         margin-top: 8px
-    }
-`
-
-export const StyledInput = styled(TextField)`
-    fieldset{
-        border-radius: 2px;
     }
 `
