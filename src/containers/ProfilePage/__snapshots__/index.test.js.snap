@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfilePage should render 1`] = `
+<section
+  className="sc-ifAKCX fUiGqH"
+>
+  <section
+    className="sc-EHOje htAyYO"
+  >
+    <span>
+      Bruna Oliveira
+    </span>
+    <span>
+      bruna_o@gmail.com
+    </span>
+    <span>
+      333.333.333-33
+    </span>
+    <button
+      className="MuiButtonBase-root-7 MuiIconButton-root-1 sc-bZQynM gAqiHW"
+      disabled={false}
+      onBlur={[Function]}
+      onContextMenu={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex="0"
+      type="button"
+    >
+      <span
+        className="MuiIconButton-label-6"
+      >
+        <svg
+          aria-hidden="true"
+          className="MuiSvgIcon-root-10"
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+          />
+        </svg>
+      </span>
+      <span
+        className="MuiTouchRipple-root-19"
+      />
+    </button>
+  </section>
+  <section
+    className="sc-gzVnrw QhyVa"
+  >
+    <span
+      className="sc-dnqmqq jXebwp"
+    >
+       Endereco cadastrado
+    </span>
+    <span>
+       Rua Alessandra Vieira, 42 - Santana
+    </span>
+    <button
+      className="MuiButtonBase-root-7 MuiIconButton-root-1 sc-bZQynM gAqiHW"
+      disabled={false}
+      onBlur={[Function]}
+      onContextMenu={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex="0"
+      type="button"
+    >
+      <span
+        className="MuiIconButton-label-6"
+      >
+        <svg
+          aria-hidden="true"
+          className="MuiSvgIcon-root-10"
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+          />
+        </svg>
+      </span>
+      <span
+        className="MuiTouchRipple-root-19"
+      />
+    </button>
+  </section>
+  <section
+    className="sc-iwsKbI fOJNwX"
+  >
+    <span
+      className="sc-gZMcBi ihQaXR"
+    >
+      Histórico de pedidos
+    </span>
+    <div
+      className="sc-bdVaJa euQVtR"
+    >
+      <span
+        className="sc-bwzfXH bDFBMC"
+      >
+        Habibs
+      </span>
+      <span
+        className="sc-htpNat gSoASV"
+      >
+        2019-11-25
+      </span>
+      <span
+        className="sc-bxivhb fVumoj"
+      >
+        SUBTOTAL R$ 
+        20
+        ,00
+      </span>
+    </div>
+    <div
+      className="sc-bdVaJa euQVtR"
+    >
+      <span
+        className="sc-bwzfXH bDFBMC"
+      >
+        Habibs
+      </span>
+      <span
+        className="sc-htpNat gSoASV"
+      >
+        2019-11-25
+      </span>
+      <span
+        className="sc-bxivhb fVumoj"
+      >
+        SUBTOTAL R$ 
+        20
+        ,00
+      </span>
+    </div>
+    <div
+      className="sc-bdVaJa euQVtR"
+    >
+      <span
+        className="sc-bwzfXH bDFBMC"
+      >
+        Habibs
+      </span>
+      <span
+        className="sc-htpNat gSoASV"
+      >
+        2019-11-25
+      </span>
+      <span
+        className="sc-bxivhb fVumoj"
+      >
+        SUBTOTAL R$ 
+        20
+        ,00
+      </span>
+    </div>
+  </section>
+</section>
+`;
