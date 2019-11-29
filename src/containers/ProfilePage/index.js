@@ -1,15 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import OrderHistoryCard from '../../components/OrderHistoryCard'
-import { PageContainer, AccountContainer, AddressDetail, AddressDetailTitle, OrderHistory, OrderHistoryTitle, EditAccountDetailButton, EditAddressDetailButton, EditDetailButton } from './styled'
+import { PageContainer, AccountContainer, AddressDetail, AddressDetailTitle, OrderHistory, OrderHistoryTitle, EditDetailButton } from './styled'
 import EditIcon from "@material-ui/icons/EditOutlined";
+import { fetchProfileAction, fetchOrderHistory } from '../../actions/profile';
 
-const mockOrder = {
-    totalPrice: 20,
-    restaurantName: "Habibs",
-    createdAt: 1574659218053,
-    expiresAt: 1574662818053,
-}
 export class ProfilePage extends React.Component {
     constructor(props) {
         super(props)
@@ -17,26 +12,35 @@ export class ProfilePage extends React.Component {
 
         }
     }
-
+    fetchUserDetails = () => {
+        this.props.fetchProfile();
+        this.props.fetchOrderHistory();
+    }
+    componentDidMount(){
+        this.fetchUserDetails();
+    }
     render() {
+        const {name,email,cpf,address,orders,hasAddress} = this.props.profile;
+
+        const allOrders = orders.map(order => <OrderHistoryCard order={order}/>);
+
+        const showAddress = hasAddress ? address:"Nenhum endereço cadastrado :("
         return (
             <PageContainer>
                 <AccountContainer>
-                    <span>Bruna Oliveira</span>
-                    <span>bruna_o@gmail.com</span>
-                    <span>333.333.333-33</span>
+                    <span>{name}</span>
+                    <span>{email}</span>
+                    <span>{cpf}</span>
                     <EditDetailButton><EditIcon/></EditDetailButton>
                 </AccountContainer>
                 <AddressDetail>
                     <AddressDetailTitle> Endereco cadastrado</AddressDetailTitle>
-                    <span> Rua Alessandra Vieira, 42 - Santana</span>
+                    <span>{showAddress}</span>
                     <EditDetailButton><EditIcon/></EditDetailButton>
                 </AddressDetail>
                 <OrderHistory>
                     <OrderHistoryTitle>Histórico de pedidos</OrderHistoryTitle>
-                    <OrderHistoryCard order={mockOrder}/>
-                    <OrderHistoryCard order={mockOrder}/>
-                    <OrderHistoryCard order={mockOrder}/>
+                    {allOrders}
                 </OrderHistory>
             </PageContainer>
         )
@@ -44,11 +48,13 @@ export class ProfilePage extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-
+    profile: state.profile
 })
 
-const mapDispatchToProps = {
-
-}
+const mapDispatchToProps = (dispatch) => ({
+    fetchProfile: ()=> dispatch(fetchProfileAction()),
+    fetchOrderHistory: ()=>dispatch(fetchOrderHistory())
+    
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfilePage)

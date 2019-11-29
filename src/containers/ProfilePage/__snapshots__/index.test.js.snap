@@ -8,13 +8,13 @@ exports[`ProfilePage should render 1`] = `
     className="sc-EHOje htAyYO"
   >
     <span>
-      Bruna Oliveira
+      
     </span>
     <span>
-      bruna_o@gmail.com
+      
     </span>
     <span>
-      333.333.333-33
+      
     </span>
     <button
       className="MuiButtonBase-root-7 MuiIconButton-root-1 sc-bZQynM gAqiHW"
@@ -62,7 +62,7 @@ exports[`ProfilePage should render 1`] = `
        Endereco cadastrado
     </span>
     <span>
-       Rua Alessandra Vieira, 42 - Santana
+      Nenhum endereço cadastrado :(
     </span>
     <button
       className="MuiButtonBase-root-7 MuiIconButton-root-1 sc-bZQynM gAqiHW"
@@ -109,69 +109,6 @@ exports[`ProfilePage should render 1`] = `
     >
       Histórico de pedidos
     </span>
-    <div
-      className="sc-bdVaJa euQVtR"
-    >
-      <span
-        className="sc-bwzfXH bDFBMC"
-      >
-        Habibs
-      </span>
-      <span
-        className="sc-htpNat gSoASV"
-      >
-        2019-11-25
-      </span>
-      <span
-        className="sc-bxivhb fVumoj"
-      >
-        SUBTOTAL R$ 
-        20
-        ,00
-      </span>
-    </div>
-    <div
-      className="sc-bdVaJa euQVtR"
-    >
-      <span
-        className="sc-bwzfXH bDFBMC"
-      >
-        Habibs
-      </span>
-      <span
-        className="sc-htpNat gSoASV"
-      >
-        2019-11-25
-      </span>
-      <span
-        className="sc-bxivhb fVumoj"
-      >
-        SUBTOTAL R$ 
-        20
-        ,00
-      </span>
-    </div>
-    <div
-      className="sc-bdVaJa euQVtR"
-    >
-      <span
-        className="sc-bwzfXH bDFBMC"
-      >
-        Habibs
-      </span>
-      <span
-        className="sc-htpNat gSoASV"
-      >
-        2019-11-25
-      </span>
-      <span
-        className="sc-bxivhb fVumoj"
-      >
-        SUBTOTAL R$ 
-        20
-        ,00
-      </span>
-    </div>
   </section>
 </section>
 `;
