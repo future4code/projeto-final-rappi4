@@ -7,7 +7,7 @@ import {
     StyledRadio, StyledFormControl, FormControlLabelSyled
 } from './style'
 import { FormControl, RadioGroup, FormControlLabel, Radio, Snackbar } from '@material-ui/core'
-import { StyledBtn } from '../Button/Button'
+import { StyledBtn } from '../../components/Button/Button'
 import { placeOrder } from '../../actions/cart'
 import { snackBarClose } from '../../actions/snackBar'
 import { MySnackbarContentWrapper } from '../../components/SnackBar'

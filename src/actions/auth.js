@@ -11,12 +11,10 @@ export const login = (email, password) => async dispatch => {
                 password
             }
         );
-        console.log("Login feito com sucesso!")
         window.localStorage.setItem("token", response.data.token);
         dispatch(push(routes.feed));
     } catch (e) {
         window.alert(e.message)
-        console.log("Erro no login")
     }
 };
 
@@ -32,11 +30,8 @@ export const signUp = (name, email, cpf, password) => async dispatch => {
             }
         );
         window.localStorage.setItem("token", response.data.token);
-        console.log("AUTH FUNCIONA, TOKEN SALVO!")
         dispatch(push(routes.address));
     } catch (e) {
-        console.log("DEU RUIM NO AUTH")
-        console.log(name, email, cpf, password)
         window.alert(e.message)
     }
 };
@@ -60,11 +55,9 @@ export const cadastro = (street, number, neighbourhood, city, state, complement)
             }
         }
         );
-console.log("Cadastro feito com sucesso!")
 window.localStorage.setItem("token", response.data.token);
 dispatch(push(routes.feed));
     } catch (e) {
     window.alert(e.message)
-    console.log("Erro no cadastro")
 }
 };

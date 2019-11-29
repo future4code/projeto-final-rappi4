@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import { routes } from "../Router";
-import { StyledBtn } from "../Button/Button";
-import { Wrapper} from "./AddressStyled";
+import { StyledBtn } from "../../components/Button/Button";
+import { Wrapper } from "./AddressStyled";
 import { LoginStyled } from "./AddressStyled";
 import { PageTitle } from "./AddressStyled";
 import { StyledTextField } from "./AddressStyled";
 import { FormStyled } from "./AddressStyled";
 import { cadastro } from "../../actions/auth";
+import AppBar from "../../components/AppBar";
 
 export class Address extends Component {
     constructor(props) {
@@ -35,14 +36,20 @@ export class Address extends Component {
         const { logradouro, numero, complemento, bairro, cidade, estado } = this.state
         this.props.cadastro(logradouro, numero, complemento, bairro, cidade, estado)
         console.log("pegou o adress:")
-        console.log(logradouro, numero , complemento, bairro, cidade, estado)
+        console.log(logradouro, numero, complemento, bairro, cidade, estado)
     }
 
     render() {
         const { logradouro, numero, complemento, bairro, cidade, estado } = this.state;
         return (
             <Wrapper>
+
                 <LoginStyled>
+                    <AppBar
+                        title={''}
+                        onClickBackIcon={this.clickBackIcon}
+                        ArrowBackVisible={true}
+                    />
                     <PageTitle>Meu endereço</PageTitle>
                     <FormStyled onSubmit={this.onClickCreateAdress}>
                         <StyledTextField
@@ -84,7 +91,7 @@ export class Address extends Component {
                             value={bairro}
                             required={true}
                         />
-                          <StyledTextField
+                        <StyledTextField
                             onChange={this.handleFieldChange}
                             variant="outlined"
                             name="cidade"
@@ -94,7 +101,7 @@ export class Address extends Component {
                             value={cidade}
                             required={true}
                         />
-                          <StyledTextField
+                        <StyledTextField
                             onChange={this.handleFieldChange}
                             variant="outlined"
                             name="estado"
@@ -104,7 +111,7 @@ export class Address extends Component {
                             value={estado}
                             required={true}
                         />
-                        
+
                         <StyledBtn
                             variant="contained"
                             color="primary"

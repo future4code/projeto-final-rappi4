@@ -4,38 +4,36 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
 export const Wrapper = styled.div`
-height:640px;
-width:100vw;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
 `
 export const LoginStyled = styled(Card)`
-width: 360px;
-height: 640px;
-display:flex;
-flex-direction:column;
-align-items: center;
-justify-content: center;
+  width: 100vh;
+  height: 100vh;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
 `
 export const PageTitle = styled.p`
   font-weight: bold;
 `
 export const FormStyled = styled.form`
-  width: 360px;
   display:flex;
   flex-direction:column;
   align-items: center;
   justify-content: center;
 `
 export const StyledBtnCadastro = styled(Button)`
-font-weight: bold;
-color: black;
-margin: 10px;
-:hover{
-    background: none;
-}
+  font-weight: bold;
+  color: black;
+  margin: 10px;
+  :hover{
+      background: none;
+  }
 `
 export const StyledTextField = styled(TextField)`
   padding: 1px;

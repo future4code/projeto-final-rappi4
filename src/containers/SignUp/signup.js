@@ -12,8 +12,9 @@ import { LoginStyled } from "./SignupStyled";
 import { PageTitle } from "./SignupStyled";
 import { FormStyled } from "./SignupStyled";
 import { StyledTextField } from "./SignupStyled";
-import { StyledBtn } from "../Button/Button";
+import { StyledBtn } from "../../components/Button/Button";
 import { signUp } from "../../actions/auth";
+import AppBar from "../../components/AppBar";
 
 
 export class SignUp extends Component {
@@ -43,12 +44,12 @@ export class SignUp extends Component {
     onClickCreateUser = (event) => {
         event.preventDefault();
         const { nome, email, password, password2, cpf } = this.state
-        if (password === password2){
+        if (password === password2) {
             this.props.signUp(nome, email, cpf, password)
         } else {
             window.alert("YOU SHALL NOT PASS! As senhas devem ser iguais, ok?")
         }
-        
+
     }
 
 
@@ -58,6 +59,11 @@ export class SignUp extends Component {
         return (
             <Wrapper>
                 <LoginStyled>
+                    <AppBar
+                        title={''}
+                        onClickBackIcon={this.clickBackIcon}
+                        ArrowBackVisible={true}
+                    />
                     <img src={Logo} alt="" />
                     <PageTitle>SignUp</PageTitle>
                     <FormStyled onSubmit={this.onClickCreateUser}>
@@ -80,7 +86,7 @@ export class SignUp extends Component {
                             placeholder="email@email.com"
                             value={email}
                             required={true}
-                            inputProps={{ 
+                            inputProps={{
                                 pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                             }}
                         />
@@ -94,10 +100,10 @@ export class SignUp extends Component {
                             value={cpf}
                             maxLenght="11"
                             required={true}
-                            inputProps={{ 
+                            inputProps={{
                                 pattern: "/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/",
                                 maxLength: 11
-                             }}
+                            }}
                         />
                         <StyledTextField
                             onChange={this.handleFieldChange}
@@ -162,7 +168,7 @@ export class SignUp extends Component {
 
 
 const mapDispatchToProps = dispatch => ({
-  signUp: (nome, email, cpf, password) => dispatch(signUp(nome, email, cpf, password)),
+    signUp: (nome, email, cpf, password) => dispatch(signUp(nome, email, cpf, password)),
 });
 
 export default connect(null, mapDispatchToProps)(SignUp);
