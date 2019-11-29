@@ -42,7 +42,7 @@ export const StyledPriceSpan = styled.span`
     display: block;
     font-size: 16px;
 `
-export const StyledButton = styled.button`
+export const StyledAddButton = styled.button`
     position: absolute;
     bottom: 0;
     right: 0;
@@ -52,6 +52,23 @@ export const StyledButton = styled.button`
     border-radius: 8px 0 8px 0;
     background: white;
     color: black;
+    font-size: 12px;
+    white-space: nowrap;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+`
+
+export const StyledRemoveButton = styled.button`
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 90px;
+    height: 31px;
+    border: 1px solid #e86e5a;
+    border-radius: 8px 0 8px 0;
+    background: white;
+    color: #e86e5a;
     font-size: 12px;
     white-space: nowrap;
     text-decoration: none;

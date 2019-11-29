@@ -2,7 +2,9 @@ import React from 'react'
 import { StyledRestaurantCard, StyledRestaurantImageWrapper, StyledRestaurantImage, StyledRestaurantContent, StyledRestaurantTitle, StyledRestaurantInfo, StyledDetailedRestaurantCard, StyledDetailedRestaurantInfo, StyledAddresSpan, StyledShippingSpan, StyledDeliveryTime, StyledDetailedRestaurantContent } from './styled'
 
 export default function RestaurantCard(props) {
-    // Retorna um card de restaurante detalhado se props.detailedCard === true
+    const handleCardClick = ()=> {
+        props.onCardClick(props.restaurant.id);
+    }
     if (props.detailedCard) {
         return (
             <StyledDetailedRestaurantCard>
@@ -22,7 +24,7 @@ export default function RestaurantCard(props) {
         ) 
     } else {
         return (
-            <StyledRestaurantCard>
+            <StyledRestaurantCard onClick={handleCardClick}>
                 <StyledRestaurantImageWrapper>
                     <StyledRestaurantImage src={props.restaurant.logoUrl} />
                 </StyledRestaurantImageWrapper>
