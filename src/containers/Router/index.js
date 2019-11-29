@@ -5,7 +5,6 @@ import Cart from "../Cart";
 import Login from "../Login/Login";
 import SignUp from "../SignUp/signup";
 import Address from "../Address/Address";
-import ProductCard from "../../components/ProductCard";
 import FeedPage from "../FeedPage";
 import DetailedRestaurantPage from "../DetailedRestaurantPage";
 import SearchPage from '../SearchPage/index';
@@ -32,7 +31,7 @@ function Router(props) {
         <Route exact path={routes.cart} component={Cart} />
         <Route exact path={routes.feed} component={FeedPage} />
         <Route exact path={routes.profile} component={ProfilePage} />
-        <Route exact path={routes.root} component={ProductCard} />
+        <Route exact path={routes.root} component={DetailedRestaurantPage} />
         <Route exact path={routes.search} component={SearchPage} />
       </Switch>
     </ConnectedRouter>
