@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const AppBarStyled = styled.div`
     height: 44px;
     margin-bottom:1px;
