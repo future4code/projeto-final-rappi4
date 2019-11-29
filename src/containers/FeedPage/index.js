@@ -4,6 +4,11 @@ import { FeedPageContainer, StyledInput } from './styled'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import SearchIcon from '@material-ui/icons/Search'
 import RestaurantCard from '../../components/RestaurantCard/index'
+import RestaurantCard from '../../components/RestaurantCard/index';
+import { connect } from 'react-redux';
+import { push } from 'connected-react-router';
+import { routes } from '../Router/index';
+import SearchInput from '../../components/SearchInput'
 
 
 const mockRestaurant = {
@@ -17,23 +22,24 @@ const mockRestaurant = {
     category: "Árabe"
 }
 
-export default class FeedPage extends Component {
+export class FeedPage extends Component {
 
+    handleInputClick = () => {
+        this.props.goToSearch();
+    }
     render() {
         return (
             <FeedPageContainer>
-                <StyledInput id="searchStyledInput" variant="outlined"
-                    InputProps={{
-                        startAdornment: (
-                            <InputAdornment position="start">
-                                <SearchIcon />
-                            </InputAdornment>
-                        ),
-                    }}
-                />
+                <SearchInput onClick={this.handleInputClick} />
                 <FilterMenu />
-                <RestaurantCard restaurant={mockRestaurant}/>
+                <RestaurantCard restaurant={mockRestaurant} />
             </FeedPageContainer>
         )
     }
 }
+
+const mapDispatchToProps = (dispatch) => ({
+    goToSearch: () => dispatch(push(routes.search))
+});
+
+export default connect(null, mapDispatchToProps)(FeedPage)
