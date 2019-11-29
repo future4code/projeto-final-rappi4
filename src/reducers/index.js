@@ -4,6 +4,7 @@ import detailedRestaurant from './detailedRestaurant'
 import cart from "./cart";
 import snackBar from './snackBar'
 import { profile } from "./profile";
+import restaurants from './restaurants';
 
 
 export const generateReducers = history =>
@@ -13,5 +14,6 @@ export const generateReducers = history =>
     // Outros reducers aqui
     cart,
     snackBar,
-    profile
+    profile,
+    restaurants
   });
