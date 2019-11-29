@@ -4,6 +4,7 @@ import { FeedPageContainer, StyledInput } from './styled'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import SearchIcon from '@material-ui/icons/Search'
 import RestaurantCard from '../../components/RestaurantCard/index';
+import MenuBar from '../Menubar/index';
 
 
 const mockRestaurant = {
@@ -33,6 +34,7 @@ export default class FeedPage extends Component {
                 />
                 <FilterMenu />
                 <RestaurantCard restaurant={mockRestaurant}/>
+                <MenuBar/>
             </FeedPageContainer>
         )
     }
