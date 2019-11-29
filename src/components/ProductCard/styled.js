@@ -6,6 +6,7 @@ export const StyledCardContainer = styled.div`
     border: solid 1px #b8b8b8;
     display: flex;
     position: relative;
+    margin-bottom:8px;
 `
 
 export const StyledImg = styled.img`

@@ -1,10 +1,10 @@
 import React from "react";
 import { ConnectedRouter } from "connected-react-router";
 import { Switch, Route } from "react-router-dom";
+import { Cart } from "../Cart";
 import Login from "../Login/Login";
 import SignUp from "../SignUp/signup";
 import Address from "../Address/Address";
-import { Carrinho } from "../Carrinho/Carrinho";
 import ProductCard from "../../components/ProductCard";
 import FeedPage from "../FeedPage";
 import ProfilePage from "../ProfilePage";
@@ -25,7 +25,7 @@ function Router(props) {
         <Route exact path={routes.root} component={Login} />
         <Route exact path={routes.signup} component={SignUp} />
         <Route exact path={routes.address} component={Address} />
-        <Route exact path={routes.cart} component={Carrinho} />
+        <Route path={routes.cart} component={Cart} />
         <Route exact path={routes.feed} component={FeedPage} />
         <Route exact path={routes.profile} component={ProfilePage} />
         <Route exact path={routes.root} component={ProductCard} />
