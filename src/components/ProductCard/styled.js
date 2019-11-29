@@ -9,10 +9,16 @@ export const StyledCardContainer = styled.div`
     margin-bottom:8px;
 `
 
+export const StyledImgWrapper = styled.div`
+    max-height: 100%;
+    max-width: 29.573170731707314%;
+`
+
 export const StyledImg = styled.img`
-    width: 97px;
-    height: 111px;
+    width: 100%;
+    height: 100%;
     border-radius: 8px 0 0 8px;
+    object-fit: cover;
     background-color: #d8d8d8;
 `
 
