@@ -44,8 +44,7 @@ export class SignUp extends Component {
         event.preventDefault();
         const { nome, email, password, password2, cpf } = this.state
         if (password === password2){
-            this.props.signUp(nome, email, password, cpf)
-            console.log("Pegou as info do onClickCreateUser")
+            this.props.signUp(nome, email, cpf, password)
         } else {
             window.alert("YOU SHALL NOT PASS! As senhas devem ser iguais, ok?")
         }
@@ -81,18 +80,24 @@ export class SignUp extends Component {
                             placeholder="email@email.com"
                             value={email}
                             required={true}
-                            inputProps={{ pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" }}
+                            inputProps={{ 
+                                pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                            }}
                         />
                         <StyledTextField
                             onChange={this.handleFieldChange}
                             variant="outlined"
                             name="cpf"
-                            type="number"
+                            type="text"
                             label="CPF"
                             placeholder="xxx.xxx.xxx.xx"
                             value={cpf}
+                            maxLenght="11"
                             required={true}
-                            inputProps={{ pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" }}
+                            inputProps={{ 
+                                pattern: "/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/",
+                                maxLength: 11
+                             }}
                         />
                         <StyledTextField
                             onChange={this.handleFieldChange}
@@ -104,6 +109,7 @@ export class SignUp extends Component {
                             value={password}
                             required={true}
                             InputProps={{
+                                minLength: 6,
                                 endAdornment: (
                                     <InputAdornment position="end">
                                         <IconButton
@@ -126,6 +132,7 @@ export class SignUp extends Component {
                             value={password2}
                             required={true}
                             InputProps={{
+                                minLength: 6,
                                 endAdornment: (
                                     <InputAdornment position="end">
                                         <IconButton

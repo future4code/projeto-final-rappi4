@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { push } from "connected-react-router";
+import { routes } from "../Router";
+import { getPerfil } from "../../actions/auth";
 import RestaurantCard from '../../components/OrderDetailsCard'
 import {
     AppWrapper, AppBar, TitleAppBar, TopoWrapper, ClientName, ClientEmail, ClientCPF, MiddleWrapper, EndEntrega, EndEntregaCliente, HistoricoPedidos, DividerStyled, NavBar

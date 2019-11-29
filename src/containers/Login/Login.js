@@ -14,6 +14,7 @@ import { FormStyled } from "./LoginStyled";
 import { StyledBtn } from "../Button/Button";
 import { StyledBtnCadastro } from "./LoginStyled";
 import { StyledTextField } from "./LoginStyled";
+import { login } from "../../actions/auth";
 
 export class Login extends Component {
     constructor(props) {
@@ -35,6 +36,13 @@ export class Login extends Component {
     handleClickShowPassword = () => {
         this.setState(state => ({ showPassword: !state.showPassword }));
     };
+
+    onClickLogin = (event) => {
+        event.preventDefault();
+        const { email, password } = this.state
+        this.props.doLogin(email, password)
+        console.log("pegou as info do login")
+      }
 
     render() {
         const { email, password } = this.state;
@@ -62,9 +70,11 @@ export class Login extends Component {
                             type={this.state.showPassword ? 'text' : 'password'}
                             label="Senha"
                             placeholder="Mínimo 6 caracteres"
+                            minlenght="6"
                             value={password}
                             required={true}
                             InputProps={{
+                                minLength: 6,
                                 endAdornment: (
                                     <InputAdornment position="end">
                                         <IconButton
@@ -81,6 +91,7 @@ export class Login extends Component {
                             variant="contained"
                             color="primary"
                             type='submit'
+                            disabled={!this.state.password}
                         > Entrar
                         </StyledBtn>
 
@@ -101,6 +112,7 @@ export class Login extends Component {
 
 const mapDispatchToProps = dispatch => ({
     goToCadastrar: () => dispatch(push(routes.signup)),
+    doLogin: (email, password) => dispatch(login(email, password)),
 });
 
 export default connect(null, mapDispatchToProps)(Login);
