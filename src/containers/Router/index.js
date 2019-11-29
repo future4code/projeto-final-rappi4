@@ -31,7 +31,6 @@ function Router(props) {
         <Route exact path={routes.address} component={Address} />
         <Route exact path={routes.cart} component={Cart} />
         <Route exact path={routes.feed} component={FeedPage} />
-        <Route exact path={routes.perfil} component={PerfilPage} />
         <Route exact path={routes.profile} component={ProfilePage} />
         <Route exact path={routes.root} component={ProductCard} />
         <Route exact path={routes.search} component={SearchPage} />
