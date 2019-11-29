@@ -7,7 +7,6 @@ import SignUp from "../SignUp/signup";
 import Address from "../Address/Address";
 import ProductCard from "../../components/ProductCard";
 import FeedPage from "../FeedPage";
-import PerfilPage from "../PerfilPage";
 import DetailedRestaurantPage from "../DetailedRestaurantPage";
 import SearchPage from '../SearchPage/index';
 import ProfilePage from "../ProfilePage";
