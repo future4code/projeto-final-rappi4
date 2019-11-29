@@ -13,6 +13,8 @@ import { snackBarClose } from '../../actions/snackBar'
 import { MySnackbarContentWrapper } from '../../components/SnackBar'
 import AppBar from '../../components/AppBar'
 import ArrowBack from '@material-ui/icons/ArrowBackIos';
+import { fetchProfileAction } from '../../actions/profile';
+import ProductCard from '../../components/ProductCard'
 
 //TODO AJUSTAR STYLO DO RADIO
 const FormControlControl = <StyledRadio />
@@ -24,7 +26,9 @@ export class Cart extends Component {
             selectedValue: '',
         }
     }
-
+    componentDidMount(){
+        this.props.fetchProfile();
+    }
     handleChange = event => {
         this.setState({ selectedValue: event.target.value });
     };
@@ -41,6 +45,14 @@ export class Cart extends Component {
     }
 
     render() {
+        const {category,description,shipping,deliveryTime,logoUrl,name} = this.props.orderDetailedRestaurant
+        const restaurantAddress = this.props.orderDetailedRestaurant.address
+        const restaurant = {category,description,address,shipping,deliveryTime,logoUrl,name};
+        const shippingTime = deliveryTime ? `${deliveryTime} min`:""
+        const {address} = this.props.profile
+
+        let productOrders = this.props.orderDetailedRestaurant.products.filter(product=> product.quantity > 0);
+        productOrders = productOrders.map(product => <ProductCard product={product}/>)
         return (
             <AppWrapper>
                 <AppBar
@@ -50,20 +62,19 @@ export class Cart extends Component {
                 />
                 <AdressWrapper>
                     <DeliveryAdress> Endereco de entrega</DeliveryAdress>
-                    <DeliveryAdressClient>Endereco do cliente</DeliveryAdressClient>
+                    <DeliveryAdressClient>{address}</DeliveryAdressClient>
                 </AdressWrapper>
                 <CartItensWrapper>
                     <StyledRestContent>
-                        <StyledTitle>Restaurante bom</StyledTitle>
-                        <StyledAdress>Rua 2, 344</StyledAdress>
-                        <StyledTime>30 - 40</StyledTime>
+                        <StyledTitle>{restaurant.name}</StyledTitle>
+                        <StyledAdress>{restaurantAddress}</StyledAdress>
+                        <StyledTime>{shippingTime}</StyledTime>
                     </StyledRestContent>
                     <ProductsWrapper>
-                        {/* <ProductCard/>
-                    <ProductCard/> */}
+                        {productOrders}
                     </ProductsWrapper>
                 </CartItensWrapper>
-                <Frete>Frete R$10,00</Frete>
+                <Frete>Frete R$ {restaurant.shipping ? restaurant.shipping:"00"},00</Frete>
                 <SubTotalWrapper>
                     <SubTotal>SUBTOTAL   </SubTotal>
                     <SubTotalValue>R$0,00</SubTotalValue>
@@ -121,10 +132,13 @@ const mapStateToProps = (state) => ({
     msg: state.snackBar.msg,
     variant: state.snackBar.variant,
     open: state.snackBar.open,
+    orderDetailedRestaurant: state.detailedRestaurant,
+    profile: state.profile
 })
 const mapDispatchToProps = dispatch => ({
     placeOrder: () => dispatch(placeOrder()),
     snackBarClose: () => dispatch(snackBarClose()),
+    fetchProfile: ()=> dispatch(fetchProfileAction()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart)

@@ -24,7 +24,7 @@ export default function ProductCard(props) {
             <StyledCardContent>
                 <StyledTitleSpan>{props.product.name}</StyledTitleSpan>
                 <StyledContentSpan>{props.product.description}</StyledContentSpan>
-                <StyledPriceSpan>R$ {props.product.price},00</StyledPriceSpan>
+                <StyledPriceSpan>R$ {props.product.price}</StyledPriceSpan>
             </StyledCardContent>
             {renderCartQuantity}
             {removeFromCartButton}
