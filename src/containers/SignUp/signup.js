@@ -98,10 +98,8 @@ export class SignUp extends Component {
                             label="CPF"
                             placeholder="xxx.xxx.xxx.xx"
                             value={cpf}
-                            maxLenght="11"
                             required={true}
                             inputProps={{
-                                pattern: "/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/",
                                 maxLength: 11
                             }}
                         />
