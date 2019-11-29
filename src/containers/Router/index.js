@@ -19,7 +19,7 @@ export const routes = {
   cart: "/cart",
   profile: "/profile",
   feed: "/feed",
-  restaurant: "/restaurant"
+  restaurant: "/restaurant",
   search: "/search"
 };
 
