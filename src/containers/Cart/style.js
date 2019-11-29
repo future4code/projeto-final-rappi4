@@ -1,32 +1,14 @@
 import styled from 'styled-components'
 import Divider from '@material-ui/core/Divider';
+import { withStyles } from '@material-ui/core/styles';
+import Radio from '@material-ui/core/Radio';
+import { FormControl, FormControlLabel } from '@material-ui/core';
 
 export const AppWrapper = styled.div`
     display:flex;
     flex-direction:column;
     height: 600px;
     font-family: Roboto;
-`
-
-export const AppBar = styled.div`
-    height: 44px;
-    margin-bottom:1px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    align-self:center;
-    padding: 12px 0;
-`
-
-export const TitleAppBar = styled.div`
-    font-size: 16px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: -0.39px;
-    text-align: center;
-    color: var(--black);
 `
 
 export const CartItensWrapper = styled.div`
@@ -188,3 +170,28 @@ export const AdressWrapper = styled.div`
     background-color: #eeeeee;
     padding:16px;
 `
+
+export const StyledRadio = withStyles({
+  root: {
+    color:"black",
+    padding:"0",
+  },
+  
+  
+})(Radio);
+
+export const StyledFormControl = withStyles({
+  root: {
+    margin:'0 16px',
+  },
+})(FormControl);
+
+export const FormControlLabelSyled = withStyles({
+  root: {
+    margin:'0',
+    marginBottom:'8px'
+  },
+  label: {
+    marginLeft: '8px',
+  },
+})(FormControlLabel);

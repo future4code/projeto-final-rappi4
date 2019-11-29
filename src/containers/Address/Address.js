@@ -1,18 +1,26 @@
 import React, { Component } from "react";
-import { StyledBtn } from "../Button/Button";
-import { Wrapper} from "./AddressStyled";
+import { connect } from "react-redux";
+import { push } from "connected-react-router";
+import { routes } from "../Router";
+import { StyledBtn } from "../../components/Button/Button";
+import { Wrapper } from "./AddressStyled";
 import { LoginStyled } from "./AddressStyled";
 import { PageTitle } from "./AddressStyled";
 import { StyledTextField } from "./AddressStyled";
 import { FormStyled } from "./AddressStyled";
+import { cadastro } from "../../actions/auth";
+import AppBar from "../../components/AppBar";
 
 export class Address extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            nome: "",
-            email: "",
-            password: "",
+            logradouro: "",
+            numero: "",
+            complemento: "",
+            bairro: "",
+            cidade: "",
+            estado: ""
         };
     }
 
@@ -23,19 +31,33 @@ export class Address extends Component {
         });
     };
 
+    onClickCreateAdress = (event) => {
+        event.preventDefault();
+        const { logradouro, numero, complemento, bairro, cidade, estado } = this.state
+        this.props.cadastro(logradouro, numero, complemento, bairro, cidade, estado)
+        console.log("pegou o adress:")
+        console.log(logradouro, numero, complemento, bairro, cidade, estado)
+    }
+
     render() {
         const { logradouro, numero, complemento, bairro, cidade, estado } = this.state;
         return (
             <Wrapper>
+
                 <LoginStyled>
+                    <AppBar
+                        title={''}
+                        onClickBackIcon={this.clickBackIcon}
+                        ArrowBackVisible={true}
+                    />
                     <PageTitle>Meu endereço</PageTitle>
-                    <FormStyled onSubmit={this.onClickLogin}>
+                    <FormStyled onSubmit={this.onClickCreateAdress}>
                         <StyledTextField
                             onChange={this.handleFieldChange}
                             variant="outlined"
-                            name="Logradouro"
+                            name="logradouro"
                             type="text"
-                            label="Logradouro"
+                            label="logradouro"
                             placeholder="Rua / Av."
                             value={logradouro}
                             required={true}
@@ -69,7 +91,7 @@ export class Address extends Component {
                             value={bairro}
                             required={true}
                         />
-                          <StyledTextField
+                        <StyledTextField
                             onChange={this.handleFieldChange}
                             variant="outlined"
                             name="cidade"
@@ -79,7 +101,7 @@ export class Address extends Component {
                             value={cidade}
                             required={true}
                         />
-                          <StyledTextField
+                        <StyledTextField
                             onChange={this.handleFieldChange}
                             variant="outlined"
                             name="estado"
@@ -89,7 +111,7 @@ export class Address extends Component {
                             value={estado}
                             required={true}
                         />
-                        
+
                         <StyledBtn
                             variant="contained"
                             color="primary"
@@ -105,6 +127,9 @@ export class Address extends Component {
     }
 }
 
+const mapDispatchToProps = dispatch => ({
+    cadastro: (logradouro, numero, complemento, bairro, cidade, estado) => dispatch(cadastro(logradouro, numero, complemento, bairro, cidade, estado))
+});
 
 
-export default Address;
+export default connect(null, mapDispatchToProps)(Address);

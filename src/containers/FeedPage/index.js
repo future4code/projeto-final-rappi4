@@ -1,41 +1,51 @@
 import React, { Component } from 'react'
 import FilterMenu from '../../components/FilterMenu'
-import { FeedPageContainer, StyledInput } from './styled'
-import InputAdornment from '@material-ui/core/InputAdornment'
-import SearchIcon from '@material-ui/icons/Search'
+import { FeedPageContainer } from './styled'
 import RestaurantCard from '../../components/RestaurantCard/index';
 import MenuBar from '../Menubar/index';
+import { connect } from 'react-redux';
+import { push } from 'connected-react-router';
+import { routes } from '../Router/index';
+import SearchInput from '../../components/SearchInput'
+import { fetchRestaurantsAction } from '../../actions/restaurant';
+import restaurants from '../../reducers/restaurants';
 
 
-const mockRestaurant = {
-    "id": "1",
-    "description": "Habib's é uma rede de restaurantes de comida rápida brasileira especializada em culinária árabe, os restaurantes vendem mais de 600 milhões de esfirras por ano. A empresa emprega 22 mil colaboradores e tem 421 unidades distribuídas em mais de cem municípios em 20 unidades federativas.",
-    "shipping": 6,
-    "address": "Rua das Margaridas, 110 - Jardim das Flores",
-    "name": "Habibs",
-    "logoUrl": "http://soter.ninja/futureFoods/logos/habibs.jpg",
-    "deliveryTime": 60,
-    "category": "Árabe"
-}
+export class FeedPage extends Component {
 
-export default class FeedPage extends Component {
 
+    componentDidMount(){
+        this.props.fetchRestaurants();
+    }
+
+    handleInputClick = () => {
+        this.props.goToSearch();
+    }
+
+    handleCardClick = (id) => {
+        this.props.goToDetailedRestaurant(id);
+    }
     render() {
+        const { allRestaurants} = this.props
+        const restaurants = allRestaurants.map(restaurant => <RestaurantCard restaurant={restaurant} onCardClick={this.handleCardClick}/>)
         return (
             <FeedPageContainer>
-                <StyledInput id="searchStyledInput" variant="outlined"
-                    InputProps={{
-                        startAdornment: (
-                            <InputAdornment position="start">
-                                <SearchIcon />
-                            </InputAdornment>
-                        ),
-                    }}
-                />
+                <SearchInput onClick={this.handleInputClick} />
                 <FilterMenu />
                 <RestaurantCard restaurant={mockRestaurant}/>
                 <MenuBar/>
+                {restaurants}
             </FeedPageContainer>
         )
     }
 }
+const mapStateToProps = (state) => ({
+    allRestaurants: state.restaurants.restaurants,
+})
+const mapDispatchToProps = (dispatch) => ({
+    goToSearch: () => dispatch(push(routes.search)),
+    fetchRestaurants: ()=> dispatch(fetchRestaurantsAction()),
+    goToDetailedRestaurant: (id) => dispatch(push(`/restaurant/${id}`))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(FeedPage)

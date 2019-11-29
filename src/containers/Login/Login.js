@@ -11,7 +11,7 @@ import { LoginStyled } from "./LoginStyled";
 import { Wrapper } from "./LoginStyled";
 import { PageTitle } from "./LoginStyled";
 import { FormStyled } from "./LoginStyled";
-import { StyledBtn } from "../Button/Button";
+import { StyledBtn } from "../../components/Button/Button";
 import { StyledBtnCadastro } from "./LoginStyled";
 import { StyledTextField } from "./LoginStyled";
 import { login } from "../../actions/auth";
@@ -41,7 +41,6 @@ export class Login extends Component {
         event.preventDefault();
         const { email, password } = this.state
         this.props.doLogin(email, password)
-        console.log("pegou as info do login")
       }
 
     render() {

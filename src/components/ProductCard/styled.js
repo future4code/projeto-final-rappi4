@@ -9,10 +9,16 @@ export const StyledCardContainer = styled.div`
     margin-bottom:8px;
 `
 
+export const StyledImgWrapper = styled.div`
+    max-height: 100%;
+    max-width: 29.573170731707314%;
+`
+
 export const StyledImg = styled.img`
-    width: 97px;
-    height: 111px;
+    width: 100%;
+    height: 100%;
     border-radius: 8px 0 0 8px;
+    object-fit: cover;
     background-color: #d8d8d8;
 `
 
@@ -36,7 +42,7 @@ export const StyledPriceSpan = styled.span`
     display: block;
     font-size: 16px;
 `
-export const StyledButton = styled.button`
+export const StyledAddButton = styled.button`
     position: absolute;
     bottom: 0;
     right: 0;
@@ -46,6 +52,23 @@ export const StyledButton = styled.button`
     border-radius: 8px 0 8px 0;
     background: white;
     color: black;
+    font-size: 12px;
+    white-space: nowrap;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+`
+
+export const StyledRemoveButton = styled.button`
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 90px;
+    height: 31px;
+    border: 1px solid #e86e5a;
+    border-radius: 8px 0 8px 0;
+    background: white;
+    color: #e86e5a;
     font-size: 12px;
     white-space: nowrap;
     text-decoration: none;
