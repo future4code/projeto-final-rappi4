@@ -70,9 +70,11 @@ export class Login extends Component {
                             type={this.state.showPassword ? 'text' : 'password'}
                             label="Senha"
                             placeholder="Mínimo 6 caracteres"
+                            minlenght="6"
                             value={password}
                             required={true}
                             InputProps={{
+                                minLength: 6,
                                 endAdornment: (
                                     <InputAdornment position="end">
                                         <IconButton
@@ -89,6 +91,7 @@ export class Login extends Component {
                             variant="contained"
                             color="primary"
                             type='submit'
+                            disabled={!this.state.password}
                         > Entrar
                         </StyledBtn>
 

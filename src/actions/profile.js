@@ -1,28 +1,43 @@
-import axios from "axios";
-import { push } from "connected-react-router";
-import { routes } from "../containers/Router";
+import axios from 'axios'
 
-export const getPerfil = () => async dispatch => {
-    const token = window.localStorage.getItem("token")
-    const response = await axios.get(
-        "https://us-central1-missao-newton.cloudfunctions.net/rappi4/profile",
-        {
-            token,
+const baseURL = "https://us-central1-missao-newton.cloudfunctions.net/rappi4"
+
+const getToken = () => {
+    return window.localStorage.getItem("token") || false;
+}
+export const setProfileAction = (user) => ({
+    type: "SET_PROFILE",
+    payload: {
+        user
+    }
+})
+export const setOrderHistory = (orders) => ({
+    type: "SET_ORDER_HISTORY",
+    payload: {
+        orders
+    }
+})
+export const fetchProfileAction = () => async (dispatch) => {
+    const token = getToken();
+    if (token) {
+        try {
+            const response = await axios.get(`${baseURL}/profile`, { headers: { auth: token } })
+            dispatch(setProfileAction(response.data.user))
+        } catch (error) {
+            console.log(error, token)
         }
-    );
-    console.log(response)
+    }
 
+}
 
-};
-
-export const orderHistory = () => async dispatch => {
-    const token = window.localStorage.getItem("token")
-    const response = await axios.get(
-        "https://us-central1-missao-newton.cloudfunctions.net/rappi4/signup",
-        {
-            token,
+export const fetchOrderHistory = () => async (dispatch) => {
+    const token = getToken();
+    if (token) {
+        try {
+            const response = await axios.get(`${baseURL}/orders/history`, { headers: { auth: token } })
+            dispatch(setOrderHistory(response.data.orders))
+        } catch (error) {
+            console.log(error, token)
         }
-    );
-
-} 
-}; 
+    }
+}
