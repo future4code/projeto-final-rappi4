@@ -86,8 +86,25 @@ const initialState = {
 
 const detailedRestaurant = (state = initialState, action) => {
     switch (action.type) {
-      case "DISPLAY_DETAILED_RESTAURANT":
-        const newState = action.payload.trip;
+      case "SET_PRODUCT_QUANTITY":
+          const getProductId = state.products.findIndex(product => product.id === action.payload.id);
+
+          const newProduct = {...state.products[getProductId], quantity: action.payload.quantity};
+          
+          state.products[getProductId] = {...newProduct};
+
+        return state;
+      case "REMOVE_PRODUCT_FROM_CART":
+          const productIdToRemoveFromCart = state.products.findIndex(product => product.id === action.payload.id);
+
+          const productToRemove = {...state.products[productIdToRemoveFromCart], quantity: 0};
+
+          console.log(productToRemove);
+          
+          state.products[productIdToRemoveFromCart] = {...productToRemove};
+
+          const newState = {...state}
+
         return newState;
       default:
         return state;

@@ -10,6 +10,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+import { setProductQuantity, removeProductFromCart } from '../../actions/restaurant'
 
 
 // MOCK DE TESTE PARA RENDERIZAR OS PRODUTOS 
@@ -53,12 +54,32 @@ class DetailedRestaurantPage extends Component {
     constructor(props){
         super(props)
         this.state = {
-            open: false
+            open: false,
+            selectedValue: 0,
+            productId: ''
         }
     }
 
-    handleDialogState = () => {
+    openAddToCartDialog = (id) => {
+        this.setState({open: !this.state.open, productId: id})
+    }
+
+    removeProductFromCart = (id) => {
+        const {removeFromCart} = this.props
+
+        removeFromCart(id)
+    }
+
+    handleAddToCart = () => {
+        const {productId, selectedValue} = this.state
+
+        this.props.setProductToId(productId, selectedValue);
+
         this.setState({open: !this.state.open})
+    }
+
+    handleSelectedValue = (event) => {
+        this.setState({selectedValue: event.target.value})
     }
 
     sortCategories = (a, b) => {
@@ -73,7 +94,7 @@ class DetailedRestaurantPage extends Component {
 
     render() {
         const {products} = this.props;
-        const {open} = this.state;
+        const {open, selectedValue, productId} = this.state;
 
         let uniqueCategories = products.sort(this.sortCategories);
 
@@ -95,11 +116,13 @@ class DetailedRestaurantPage extends Component {
                 ) : null}
                 <ProductCard
                   product={product}
-                  onClickAddButton={this.handleDialogState}
+                  onClickAddButton={this.openAddToCartDialog}
+                  onClickRemoveButton={this.removeProductFromCart}
                 />
               </Fragment>
             )
         });      
+
         return (
             <DetailedRestaurantWrapper>
                 <div className='appbar'>
@@ -114,7 +137,7 @@ class DetailedRestaurantPage extends Component {
                     <DialogTitle >Selecione a quantidade desejada</DialogTitle>
                     <DialogContent>
                         <StyledForm>
-                            <Select >
+                            <Select value={selectedValue} onChange={this.handleSelectedValue}>
                                 <MenuItem value={0}>
                                     <em>0</em>
                                 </MenuItem>
@@ -130,7 +153,7 @@ class DetailedRestaurantPage extends Component {
                         <Button color="primary" onClick={this.handleDialogState}>
                         Cancelar
                         </Button>
-                        <Button color="primary" onClick={this.handleDialogState}>
+                        <Button color="primary" onClick={this.handleAddToCart}>
                         Adicionar ao carrinho
                         </Button>
                     </DialogActions>
@@ -144,8 +167,9 @@ const mapStateToProps = state => ({
     products: state.detailedRestaurant.products
 })
 
-const mapDispatchToProps = dispatch => {
-    
-}
+const mapDispatchToProps = dispatch => ({
+    setProductToId: (id, quantity) =>  dispatch(setProductQuantity(id, quantity)),
+    removeFromCart: (id) => dispatch(removeProductFromCart(id)) 
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(DetailedRestaurantPage)

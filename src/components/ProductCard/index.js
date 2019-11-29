@@ -1,8 +1,20 @@
 import React from 'react'
-import { StyledCardContainer, StyledImg, StyledCardContent, StyledTitleSpan, StyledContentSpan, StyledPriceSpan, StyledButton, StyledCounter, StyledImgWrapper } from './styled';
+import { StyledCardContainer, StyledImg, StyledCardContent, StyledTitleSpan, StyledContentSpan, StyledPriceSpan, StyledButton, StyledCounter, StyledImgWrapper, StyledRemoveButton, StyledAddButton } from './styled';
 
 
 export default function ProductCard(props) {
+
+    const handleClickAddButton = () => {
+        props.onClickAddButton(props.product.id)
+    }
+
+    const handleClickRemoveButton = () => {
+        props.onClickRemoveButton(props.product.id)
+    }
+
+    const renderCartQuantity = props.product.quantity ? <StyledCounter>{props.product.quantity}</StyledCounter> : null
+
+    const removeFromCartButton = props.product.quantity ? <StyledRemoveButton onClick={handleClickRemoveButton}>Remover</StyledRemoveButton> : <StyledAddButton onClick={handleClickAddButton}>Adicionar</StyledAddButton>
 
     return (
         <StyledCardContainer>
@@ -14,8 +26,8 @@ export default function ProductCard(props) {
                 <StyledContentSpan>{props.product.description}</StyledContentSpan>
                 <StyledPriceSpan>R$ {props.product.price},00</StyledPriceSpan>
             </StyledCardContent>
-            <StyledCounter>2</StyledCounter>
-            <StyledButton onClick={props.onClickAddButton}>adicionar</StyledButton>
+            {renderCartQuantity}
+            {removeFromCartButton}
         </StyledCardContainer>
     )
 }
