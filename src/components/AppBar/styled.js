@@ -2,13 +2,13 @@ import styled from 'styled-components'
 
 export const AppBarStyled = styled.div`
     height: 44px;
-    margin-bottom:1px;
-    display:grid;
+    width: 50vh;
+    margin-bottom: 1px;
+    display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    justify-content:center;
-    align-items:center;
-    align-self:center;
-    box-shadow: 0 0.5px 0 0 rgba(0, 0, 0, 0.25);
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 `
 
 export const TitleAppBarStyled = styled.div`

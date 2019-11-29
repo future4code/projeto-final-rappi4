@@ -4,16 +4,15 @@ import Button from "@material-ui/core/Button";
 import { Card } from "@material-ui/core";
 
 export const Wrapper = styled.div`
-  height:640px;
-  width:100vw;
+  width:100%;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
 `
 export const LoginStyled = styled(Card)`
-  width: 360px;
-  height: 640px;
+  width: 100vh;
+  height: 100vh;
   display:flex;
   flex-direction:column;
   align-items: center;
@@ -23,7 +22,6 @@ export const PageTitle = styled.p`
     font-weight: bold;
 `
 export const FormStyled = styled.form`
-    width: 360px;
     display:flex;
     flex-direction:column;
     align-items: center;
@@ -31,7 +29,7 @@ export const FormStyled = styled.form`
 `
 export const StyledTextField = styled(TextField)`
     padding: 1px;
-    width: 328px;
+    width: 100%;
     height: 56px;
     border-radius: 2px;
     margin: 10px;

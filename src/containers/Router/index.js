@@ -25,6 +25,7 @@ function Router(props) {
   return (
     <ConnectedRouter history={props.history}>
       <Switch>
+        <Route exact path={routes.root} component={Login} />
         <Route exact path={routes.signup} component={SignUp} />
         <Route exact path={routes.address} component={Address} />
         <Route exact path={routes.cart} component={Cart} />
