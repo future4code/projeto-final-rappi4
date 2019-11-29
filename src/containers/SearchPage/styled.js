@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const FeedPageContainer = styled.section`
+export const PageContainer = styled.section`
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -8,4 +8,9 @@ export const FeedPageContainer = styled.section`
     > * {
         margin-top: 8px
     }
+`
+
+export const StyledParagraph = styled.p`
+    margin-top: 20px;
+    text-align: center;
 `

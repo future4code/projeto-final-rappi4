@@ -7,6 +7,8 @@ import SignUp from "../SignUp/signup";
 import Address from "../Address/Address";
 import ProductCard from "../../components/ProductCard";
 import FeedPage from "../FeedPage";
+import PerfilPage from "../PerfilPage";
+import SearchPage from '../SearchPage/index';
 import ProfilePage from "../ProfilePage";
 
 export const routes = {
@@ -16,6 +18,7 @@ export const routes = {
   cart: "/cart",
   profile: "/profile",
   feed: "/feed",
+  search: "/search"
 };
 
 function Router(props) {
@@ -29,6 +32,7 @@ function Router(props) {
         <Route exact path={routes.feed} component={FeedPage} />
         <Route exact path={routes.profile} component={ProfilePage} />
         <Route exact path={routes.root} component={ProductCard} />
+        <Route exact path={routes.search} component={SearchPage} />
       </Switch>
     </ConnectedRouter>
   );
