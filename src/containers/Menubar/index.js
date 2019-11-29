@@ -11,7 +11,7 @@ export default function MenuBar(props) {
     }
     return (
         <StyledMenuContainer>
-            <StyledIconButton value="t" onClick={handleClick}> <HomeIcon /> </StyledIconButton>
+            <StyledIconButton value="t" onClick={handleClicke}> <HomeIcon /> </StyledIconButton>
             <StyledIconButton> <CartIcon /> </StyledIconButton>
             <StyledIconButton> <ProfileIcon /> </StyledIconButton>
         </StyledMenuContainer>
