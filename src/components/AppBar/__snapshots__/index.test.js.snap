@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppBar should render  1`] = `
+<div>
+  <div
+    className="sc-bdVaJa fdybHj"
+  >
+    <div
+      className="sc-htpNat ixxngO"
+      onClick="tem"
+    >
+      olha só, temos
+    </div>
+    <div
+      className="sc-bwzfXH ebWYhD"
+    >
+      tem tb
+    </div>
+    <div />
+  </div>
+</div>
+`;
