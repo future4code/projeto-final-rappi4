@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import ArrowBack from '@material-ui/icons/ArrowBackIos';
+
 
 export const AppBarStyled = styled.div`
     height: 44px;
