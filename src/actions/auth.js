@@ -37,6 +37,34 @@ export const signUp = (name, email, cpf, password) => async dispatch => {
     } catch (e) {
         console.log("DEU RUIM NO AUTH")
         console.log(name, email, cpf, password)
-        // window.alert(e.message)
+        window.alert(e.message)
     }
-}; 
+};
+
+export const cadastro = (street, number, neighbourhood, city, state, complement) => async dispatch => {
+    const token = window.localStorage.getItem("token");
+    try {
+        const response = await axios.put(
+            "https://us-central1-missao-newton.cloudfunctions.net/rappi4/address",
+            {
+            street,
+            number,
+            neighbourhood,
+            city,
+            state,
+            complement
+        },
+        {
+            headers: {
+                auth: token
+            }
+        }
+        );
+console.log("Cadastro feito com sucesso!")
+window.localStorage.setItem("token", response.data.token);
+dispatch(push(routes.feed));
+    } catch (e) {
+    window.alert(e.message)
+    console.log("Erro no cadastro")
+}
+};
