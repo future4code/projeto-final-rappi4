@@ -17,7 +17,7 @@ export const routes = {
   cart: "/cart",
   profile: "/profile",
   feed: "/feed",
-  restaurant: "/restaurant",
+  restaurant: "/restaurant/:id",
   search: "/search"
 };
 
@@ -25,13 +25,12 @@ function Router(props) {
   return (
     <ConnectedRouter history={props.history}>
       <Switch>
-        {/* <Route exact path={routes.root} component={Login} /> */}
         <Route exact path={routes.signup} component={SignUp} />
         <Route exact path={routes.address} component={Address} />
         <Route exact path={routes.cart} component={Cart} />
         <Route exact path={routes.feed} component={FeedPage} />
         <Route exact path={routes.profile} component={ProfilePage} />
-        <Route exact path={routes.root} component={DetailedRestaurantPage} />
+        <Route exact path={routes.restaurant} component={DetailedRestaurantPage} />
         <Route exact path={routes.search} component={SearchPage} />
       </Switch>
     </ConnectedRouter>

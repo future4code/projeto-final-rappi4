@@ -10,45 +10,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
-import { setProductQuantity, removeProductFromCart } from '../../actions/restaurant'
+import { setProductQuantity, removeProductFromCart, fetchDetailedRestaurant } from '../../actions/restaurant'
 
-
-// MOCK DE TESTE PARA RENDERIZAR OS PRODUTOS 
-const mockRestaurant = {
-    id: "1",
-    description: "Habib's é uma rede de restaurantes de comida rápida brasileira especializada em culinária árabe, os restaurantes vendem mais de 600 milhões de esfirras por ano. A empresa emprega 22 mil colaboradores e tem 421 unidades distribuídas em mais de cem municípios em 20 unidades federativas.",
-    shipping: 6,
-    address: "Rua das Margaridas, 110 - Jardim das Flores",
-    name: "Habibs",
-    logoUrl: "http://soter.ninja/futureFoods/logos/habibs.jpg",
-    deliveryTime: 60,
-    category: "Árabe"
-}
-
-// MOCK DO PAYLOAD QUE EU TENHO QUE ENVIAR PARA O COMPONENTE DE CARRINHO
-const cartMock = {
-    id: "1",
-    // não enviar description para o carrinho.
-    description: "Habib's é uma rede de restaurantes de comida rápida brasileira especializada em culinária árabe, os restaurantes vendem mais de 600 milhões de esfirras por ano. A empresa emprega 22 mil colaboradores e tem 421 unidades distribuídas em mais de cem municípios em 20 unidades federativas.",
-    shipping: 6,
-    address: "Rua das Margaridas, 110 - Jardim das Flores",
-    name: "Habibs",
-    // não enviar logoUrl para o carrinho.
-    logoUrl: "http://soter.ninja/futureFoods/logos/habibs.jpg",
-    deliveryTime: 60,
-    // não enviar category para o carrinho.
-    category: "Árabe",
-    products: [
-        {
-        id: "CnKdjU6CyKakQDGHzNln",
-        // "category": "Salgado",
-        price: "1",
-        photoUrl: "https://static-images.ifood.com.br/image/upload/f_auto,t_high/pratos/65c38aa8-b094-413d-9a80-ddc256bfcc78/201907031404_66194495.jpg",
-        name: "Bibsfiha carne",
-        description: "Esfiha deliciosa, receita secreta do Habibs."
-        },
-    ]
-}
 
 class DetailedRestaurantPage extends Component {
     constructor(props){
@@ -60,6 +23,10 @@ class DetailedRestaurantPage extends Component {
         }
     }
 
+    componentDidMount(){
+       const {id} = this.props.match.params
+       this.props.fetchDetailedRestaurant(id);
+    }
     openAddToCartDialog = (id) => {
         this.setState({open: !this.state.open, productId: id})
     }
@@ -94,8 +61,12 @@ class DetailedRestaurantPage extends Component {
 
     render() {
         const {products} = this.props;
-        const {open, selectedValue, productId} = this.state;
 
+        const {category,description,address,shipping,deliveryTime,logoUrl,name} = this.props.restaurant
+
+        const restaurant = {category,description,address,shipping,deliveryTime,logoUrl,name};
+
+        const {open, selectedValue, productId} = this.state;
         let uniqueCategories = products.sort(this.sortCategories);
 
         let lastCategory;
@@ -122,13 +93,12 @@ class DetailedRestaurantPage extends Component {
               </Fragment>
             )
         });      
-
         return (
             <DetailedRestaurantWrapper>
                 <div className='appbar'>
                     Appbar Será aqui
                 </div>
-                <RestaurantCard restaurant={mockRestaurant} detailedCard/>
+                <RestaurantCard restaurant={restaurant} detailedCard/>
                 {categoryList}
                 <Dialog
                  open={open}
@@ -164,12 +134,14 @@ class DetailedRestaurantPage extends Component {
 }
 
 const mapStateToProps = state => ({
-    products: state.detailedRestaurant.products
+    products: state.detailedRestaurant.products,
+    restaurant: state.detailedRestaurant
 })
 
 const mapDispatchToProps = dispatch => ({
     setProductToId: (id, quantity) =>  dispatch(setProductQuantity(id, quantity)),
-    removeFromCart: (id) => dispatch(removeProductFromCart(id)) 
+    removeFromCart: (id) => dispatch(removeProductFromCart(id)),
+    fetchDetailedRestaurant: (id) => dispatch(fetchDetailedRestaurant(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(DetailedRestaurantPage)
