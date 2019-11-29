@@ -7,7 +7,6 @@ import SignUp from "../SignUp/signup";
 import Address from "../Address/Address";
 import ProductCard from "../../components/ProductCard";
 import FeedPage from "../FeedPage";
-import PerfilPage from "../PerfilPage";
 import DetailedRestaurantPage from "../DetailedRestaurantPage";
 import SearchPage from '../SearchPage/index';
 import ProfilePage from "../ProfilePage";
@@ -19,7 +18,7 @@ export const routes = {
   cart: "/cart",
   profile: "/profile",
   feed: "/feed",
-  restaurant: "/restaurant"
+  restaurant: "/restaurant",
   search: "/search"
 };
 
@@ -32,7 +31,6 @@ function Router(props) {
         <Route exact path={routes.address} component={Address} />
         <Route exact path={routes.cart} component={Cart} />
         <Route exact path={routes.feed} component={FeedPage} />
-        <Route exact path={routes.perfil} component={PerfilPage} />
         <Route exact path={routes.profile} component={ProfilePage} />
         <Route exact path={routes.root} component={ProductCard} />
         <Route exact path={routes.search} component={SearchPage} />

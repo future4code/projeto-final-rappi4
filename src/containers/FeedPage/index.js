@@ -3,7 +3,6 @@ import FilterMenu from '../../components/FilterMenu'
 import { FeedPageContainer, StyledInput } from './styled'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import SearchIcon from '@material-ui/icons/Search'
-import RestaurantCard from '../../components/RestaurantCard/index'
 import RestaurantCard from '../../components/RestaurantCard/index';
 import { connect } from 'react-redux';
 import { push } from 'connected-react-router';
