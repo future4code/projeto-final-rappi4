@@ -42,7 +42,7 @@ export const placeOrder = (order, restaurantId,paymentMethod ) => async dispatch
         dispatch(push(routes.feed));
     } catch (e) {
         const msg = `Ocorreu um erro : ${e}`
-        const variant = 'error'
+        const variant = 'clock'
         dispatch(snackBarOpen(msg, variant))
         console.log("Erro no Pedido")
     }

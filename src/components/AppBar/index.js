@@ -16,10 +16,3 @@ export default function AppBar(props) {
         </div>
     )
 }
-{/* <AppBar
-    title={'Meu Carrinho'}
-    onClickBackIcon={this.clickBackIcon}
-    ArrowBackVisible={<ArrowBack />}
-/>
-import ArrowBack from '@material-ui/icons/ArrowBackIos';
- */}

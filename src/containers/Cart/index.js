@@ -13,7 +13,6 @@ import { snackBarClose } from '../../actions/snackBar'
 import { MySnackbarContentWrapper } from '../../components/SnackBar'
 import AppBar from '../../components/AppBar'
 import ArrowBack from '@material-ui/icons/ArrowBackIos';
-import { ArrowBackStyled } from '../../components/AppBar/styled'
 
 //TODO AJUSTAR STYLO DO RADIO
 const FormControlControl = <StyledRadio />
@@ -42,12 +41,8 @@ export class Cart extends Component {
     }
 
     render() {
-        const { currentOrder } = this.props
         return (
             <AppWrapper>
-                {/* <AppBar>
-                    <TitleAppBar>Carrinho</TitleAppBar>
-                </AppBar> */}
                 <AppBar
                     title={'Meu Carrinho'}
                     onClickBackIcon={this.clickBackIcon}
