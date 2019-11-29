@@ -11,6 +11,8 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import { setProductQuantity, removeProductFromCart, fetchDetailedRestaurant } from '../../actions/restaurant'
+import { routes } from '../Router/index';
+import { push } from 'connected-react-router';
 
 
 class DetailedRestaurantPage extends Component {
@@ -94,6 +96,7 @@ class DetailedRestaurantPage extends Component {
             )
         });      
         return (
+            
             <DetailedRestaurantWrapper>
                 <div className='appbar'>
                     Appbar Será aqui
@@ -141,7 +144,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     setProductToId: (id, quantity) =>  dispatch(setProductQuantity(id, quantity)),
     removeFromCart: (id) => dispatch(removeProductFromCart(id)),
-    fetchDetailedRestaurant: (id) => dispatch(fetchDetailedRestaurant(id))
+    fetchDetailedRestaurant: (id) => dispatch(fetchDetailedRestaurant(id)),
+    goCart: ()=> dispatch(push(routes.cart))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(DetailedRestaurantPage)
