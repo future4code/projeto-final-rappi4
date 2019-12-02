@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import FilterMenu from '../../components/FilterMenu'
 import { FeedPageContainer } from './styled'
 import RestaurantCard from '../../components/RestaurantCard/index';
+import MenuBar from '../Menubar/index';
 import { connect } from 'react-redux';
 import { push } from 'connected-react-router';
 import { routes } from '../Router/index';
@@ -31,6 +32,8 @@ export class FeedPage extends Component {
             <FeedPageContainer>
                 <SearchInput onClick={this.handleInputClick} />
                 <FilterMenu />
+                <RestaurantCard restaurant={mockRestaurant}/>
+                <MenuBar/>
                 {restaurants}
             </FeedPageContainer>
         )
