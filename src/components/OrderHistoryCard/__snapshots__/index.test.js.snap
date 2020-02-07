@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderHistoryCard should render 1`] = `
+<div
+  className="sc-bdVaJa euQVtR"
+>
+  <span
+    className="sc-bwzfXH bDFBMC"
+  >
+    Habibs
+  </span>
+  <span
+    className="sc-htpNat gSoASV"
+  >
+    2019-11-25
+  </span>
+  <span
+    className="sc-bxivhb fVumoj"
+  >
+    SUBTOTAL R$ 
+    20
+    ,00
+  </span>
+</div>
+`;

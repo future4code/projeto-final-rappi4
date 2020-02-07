@@ -1,0 +1,409 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchPage should render  1`] = `
+<section
+  className="sc-bwzfXH jrPBkg"
+>
+  <div
+    className="MuiFormControl-root-1 sc-bdVaJa dTUjeo"
+  >
+    <div
+      className="MuiInputBase-root-18 MuiOutlinedInput-root-5 MuiInputBase-formControl-19 MuiInputBase-adornedStart-22 MuiOutlinedInput-adornedStart-8"
+      onClick={[Function]}
+    >
+      <fieldset
+        aria-hidden={true}
+        className="MuiPrivateNotchedOutline-root-35 MuiOutlinedInput-notchedOutline-12"
+        style={
+          Object {
+            "paddingLeft": 8,
+          }
+        }
+      >
+        <legend
+          className="MuiPrivateNotchedOutline-legend-36"
+          style={
+            Object {
+              "width": 0,
+            }
+          }
+        >
+          <span
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "&#8203;",
+              }
+            }
+          />
+        </legend>
+      </fieldset>
+      <div
+        className="MuiInputAdornment-root-37 MuiInputAdornment-positionStart-39"
+      >
+        <svg
+          aria-hidden="true"
+          className="MuiSvgIcon-root-42"
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+          />
+        </svg>
+      </div>
+      <input
+        aria-invalid={false}
+        className="MuiInputBase-input-28 MuiOutlinedInput-input-13 MuiInputBase-inputAdornedStart-33 MuiOutlinedInput-inputAdornedStart-16"
+        disabled={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        required={false}
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <section
+    className="sc-bxivhb bVuncm"
+  >
+    <div
+      className="sc-ifAKCX eSINaS"
+    >
+      <img
+        className="sc-EHOje dphhBG"
+        src="http://soter.ninja/futureFoods/logos/habibs.jpg"
+      />
+    </div>
+    <div
+      className="sc-gzVnrw fAGGcE"
+    >
+      <span
+        className="sc-bZQynM iXhNPg"
+      >
+        Habibs
+      </span>
+      <div
+        className="sc-htoDjs mWGVK"
+      >
+        <span>
+          60
+           min
+        </span>
+        <span>
+          Frete R$ 
+          6
+          ,00
+        </span>
+      </div>
+    </div>
+  </section>
+  <section
+    className="sc-bxivhb bVuncm"
+  >
+    <div
+      className="sc-ifAKCX eSINaS"
+    >
+      <img
+        className="sc-EHOje dphhBG"
+        src="http://soter.ninja/futureFoods/logos/tadashii.png"
+      />
+    </div>
+    <div
+      className="sc-gzVnrw fAGGcE"
+    >
+      <span
+        className="sc-bZQynM iXhNPg"
+      >
+        Tadashii
+      </span>
+      <div
+        className="sc-htoDjs mWGVK"
+      >
+        <span>
+          50
+           min
+        </span>
+        <span>
+          Frete R$ 
+          13
+          ,00
+        </span>
+      </div>
+    </div>
+  </section>
+  <section
+    className="sc-bxivhb bVuncm"
+  >
+    <div
+      className="sc-ifAKCX eSINaS"
+    >
+      <img
+        className="sc-EHOje dphhBG"
+        src="http://soter.ninja/futureFoods/logos/mcdonalds.png"
+      />
+    </div>
+    <div
+      className="sc-gzVnrw fAGGcE"
+    >
+      <span
+        className="sc-bZQynM iXhNPg"
+      >
+        McDonalds
+      </span>
+      <div
+        className="sc-htoDjs mWGVK"
+      >
+        <span>
+          15
+           min
+        </span>
+        <span>
+          Frete R$ 
+          19
+          ,00
+        </span>
+      </div>
+    </div>
+  </section>
+  <section
+    className="sc-bxivhb bVuncm"
+  >
+    <div
+      className="sc-ifAKCX eSINaS"
+    >
+      <img
+        className="sc-EHOje dphhBG"
+        src="http://soter.ninja/futureFoods/logos/cantinamammaperrotta.jpg"
+      />
+    </div>
+    <div
+      className="sc-gzVnrw fAGGcE"
+    >
+      <span
+        className="sc-bZQynM iXhNPg"
+      >
+        Cantina Mamma Perrotta
+      </span>
+      <div
+        className="sc-htoDjs mWGVK"
+      >
+        <span>
+          20
+           min
+        </span>
+        <span>
+          Frete R$ 
+          2
+          ,00
+        </span>
+      </div>
+    </div>
+  </section>
+  <section
+    className="sc-bxivhb bVuncm"
+  >
+    <div
+      className="sc-ifAKCX eSINaS"
+    >
+      <img
+        className="sc-EHOje dphhBG"
+        src="http://soter.ninja/futureFoods/logos/baciodilatte.png"
+      />
+    </div>
+    <div
+      className="sc-gzVnrw fAGGcE"
+    >
+      <span
+        className="sc-bZQynM iXhNPg"
+      >
+        Sorveteria Bacio di Latte
+      </span>
+      <div
+        className="sc-htoDjs mWGVK"
+      >
+        <span>
+          45
+           min
+        </span>
+        <span>
+          Frete R$ 
+          10
+          ,00
+        </span>
+      </div>
+    </div>
+  </section>
+  <section
+    className="sc-bxivhb bVuncm"
+  >
+    <div
+      className="sc-ifAKCX eSINaS"
+    >
+      <img
+        className="sc-EHOje dphhBG"
+        src="http://soter.ninja/futureFoods/logos/outback.png"
+      />
+    </div>
+    <div
+      className="sc-gzVnrw fAGGcE"
+    >
+      <span
+        className="sc-bZQynM iXhNPg"
+      >
+        Outback Steakhouse
+      </span>
+      <div
+        className="sc-htoDjs mWGVK"
+      >
+        <span>
+          20
+           min
+        </span>
+        <span>
+          Frete R$ 
+          18
+          ,00
+        </span>
+      </div>
+    </div>
+  </section>
+  <section
+    className="sc-bxivhb bVuncm"
+  >
+    <div
+      className="sc-ifAKCX eSINaS"
+    >
+      <img
+        className="sc-EHOje dphhBG"
+        src="http://soter.ninja/futureFoods/logos/sotero.jpg"
+      />
+    </div>
+    <div
+      className="sc-gzVnrw fAGGcE"
+    >
+      <span
+        className="sc-bZQynM iXhNPg"
+      >
+        Sotero Cozinha Original
+      </span>
+      <div
+        className="sc-htoDjs mWGVK"
+      >
+        <span>
+          40
+           min
+        </span>
+        <span>
+          Frete R$ 
+          4
+          ,00
+        </span>
+      </div>
+    </div>
+  </section>
+  <section
+    className="sc-bxivhb bVuncm"
+  >
+    <div
+      className="sc-ifAKCX eSINaS"
+    >
+      <img
+        className="sc-EHOje dphhBG"
+        src="http://soter.ninja/futureFoods/logos/botecodeportal.jpg"
+      />
+    </div>
+    <div
+      className="sc-gzVnrw fAGGcE"
+    >
+      <span
+        className="sc-bZQynM iXhNPg"
+      >
+        Boteco de Portal
+      </span>
+      <div
+        className="sc-htoDjs mWGVK"
+      >
+        <span>
+          20
+           min
+        </span>
+        <span>
+          Frete R$ 
+          18
+          ,00
+        </span>
+      </div>
+    </div>
+  </section>
+  <section
+    className="sc-bxivhb bVuncm"
+  >
+    <div
+      className="sc-ifAKCX eSINaS"
+    >
+      <img
+        className="sc-EHOje dphhBG"
+        src="http://soter.ninja/futureFoods/logos/chun-li.jpg"
+      />
+    </div>
+    <div
+      className="sc-gzVnrw fAGGcE"
+    >
+      <span
+        className="sc-bZQynM iXhNPg"
+      >
+        Chun-Li
+      </span>
+      <div
+        className="sc-htoDjs mWGVK"
+      >
+        <span>
+          30
+           min
+        </span>
+        <span>
+          Frete R$ 
+          17
+          ,00
+        </span>
+      </div>
+    </div>
+  </section>
+  <section
+    className="sc-bxivhb bVuncm"
+  >
+    <div
+      className="sc-ifAKCX eSINaS"
+    >
+      <img
+        className="sc-EHOje dphhBG"
+        src="http://soter.ninja/futureFoods/logos/mexicanissimo.png"
+      />
+    </div>
+    <div
+      className="sc-gzVnrw fAGGcE"
+    >
+      <span
+        className="sc-bZQynM iXhNPg"
+      >
+        Mexicaníssimo
+      </span>
+      <div
+        className="sc-htoDjs mWGVK"
+      >
+        <span>
+          20
+           min
+        </span>
+        <span>
+          Frete R$ 
+          3
+          ,00
+        </span>
+      </div>
+    </div>
+  </section>
+</section>
+`;
